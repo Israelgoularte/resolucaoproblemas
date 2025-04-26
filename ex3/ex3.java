@@ -1,21 +1,19 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
 
-
-public class Main{
-    public static void main(String[] args){
+public class ex3 {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int num = scanner.nextInt();
-        int[] numbers = new int[num];
-        int distintos = 0;
-
-        for(int i = 1; i <= num; i++){
-            numbers[i] = scanner.nextInt();
-
-            if(numbers.indexOf(numbers[i]) == -1){
-                distintos++;
-            }
+        
+        int e = scanner.nextInt();
+        HashSet<Integer> distinctValues = new HashSet<>(e);
+        
+        for (int i = 0; i < e; i++) {
+            distinctValues.add(scanner.nextInt());
         }
-        System.out.println(distintos);
+        
+        System.out.println(distinctValues.size());
+        
         scanner.close();
     }
 }
